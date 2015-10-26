@@ -4,10 +4,10 @@
     "description": "Web workers wrapper for angular",
     "version": "1.0.1",
     "main": "./dist/angular-workers.js",
-    "homepage": "http://github.com/FredrikSandell/angular-workers",
+    "homepage": "http://github.com/elliot-a/angular-workers",
     "repository": {
         "type": "git",
-        "url": "git://github.com/FredrikSandell/angular-workers"
+        "url": "git://github.com/elliot-a/angular-workers"
     },
     "ignore": [
         "src",
