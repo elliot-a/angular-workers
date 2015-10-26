@@ -7,11 +7,7 @@ angular.module('FredrikSandell.worker-pool', []).service('WorkerService', [
     var importScriptsUrls = [];
     var importScripts = '';
     var serviceToUrlMap = {};
-    that.setAngularUrl = function (urlToAngularJs) {
-      importScriptsUrls.push(urlToAngularJs);
-    };
-    that.addImportScript = function (importScript) {
-      importScriptsUrls.push(importScript);
+    function updateImportList() {
       importScripts = '';
       importScriptsUrls.forEach(function (item, indx) {
         if (indx !== 0) {
@@ -19,6 +15,14 @@ angular.module('FredrikSandell.worker-pool', []).service('WorkerService', [
         }
         importScripts += '\'' + item + '\'';
       });
+    }
+    that.setAngularUrl = function (urlToAngularJs) {
+      importScriptsUrls.push(urlToAngularJs);
+      updateImportList();
+    };
+    that.addImportScript = function (importScript) {
+      importScriptsUrls.push(importScript);
+      updateImportList();
     };
     function createAngularWorkerTemplate() {
       /*jshint laxcomma:true */
